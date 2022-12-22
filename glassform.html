@@ -1,0 +1,116 @@
+    <!DOCTYPE html>
+    
+    <head>
+        <title>Glass Form</title>
+        <link rel="stylesheet" href="./glassform.css" />
+    </head>
+    
+    <body>
+    <script>
+    function submitForm()
+    {
+    	//alert("fuck");
+    	var x = document.getElementById("name");
+		var y = x.value;
+		if(y=="")
+		{
+		alert("Invalid Name");
+		return 0;
+		}
+    	x = document.getElementById("email");
+    	y = x.value;
+    	if(!ValidateEmail(y))
+    	{
+    	alert("Invalid mail");
+    	return 0;
+    	}
+    	
+    	x = document.getElementById("number");
+    	y = x.value;
+    	if(!validatePhoneNumber(y))
+    	{
+    	alert("Invalid Phone number");
+    	return 0;
+    	}
+    	document.getElementById("survey-form").submit();
+    }
+    function ValidateEmail(mail) 
+    {
+     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+      {
+        return (true);
+      }
+        return (false);
+    }
+    function validatePhoneNumber(input_str) 
+    {
+        var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+        return re.test(input_str);
+    }
+    </script>
+        <form id="survey-form" action="dstore1.jsp" method="post">
+        <main>
+            <section class="glass">
+                <div>
+                    <img src="Glass-8.png" class="center">
+                </div>
+                <div class="bg">
+                    <input type="text" required id="name" name="name" placeholder="Enter Your Name" />
+                </div>
+                <br>
+                <div class="bg">
+                    <input type="text" id="uniroll" name="roll_no" placeholder="Enter Your University Roll No" />
+                </div>
+                <br>
+                <div class="bg">
+                    <input type="text" required id="email" name="email" placeholder="Enter Your Email" />
+                </div>
+                <br>
+                <div class="bg">
+                    <input type="text" id="number" name="phone" placeholder="Enter Your Phone Number" />
+                </div>
+                <br>
+                <div class="radio-toolbar">
+                    <input type="radio" id="radioA" name="Section" value="A" checked>
+                    <label for="radioA">Section A</label>
+    
+                    <input type="radio" id="radioB" name="Section" value="B">
+                    <label for="radioB">Section B</label>
+    
+                    <input type="radio" id="radioC" name="Section" value="C">
+                    <label for="radioC">Section C</label>
+                </div>
+                <br>
+                <div class="bg">
+                    <input type="date" name="submit_date" placeholder="Date Of Submission" />
+                </div>
+                <br>
+                <div class="bg">
+                    <input type="text" id="lauguage" name="language" placeholder="Enter Code Language" />
+                </div>
+                <br>
+                <div class="bg">
+                    <textarea rows="3" cols="50" id="description" name="description"
+                        placeholder="Describe Your Project in few words"></textarea>
+                </div>
+                <br>
+                <div class="glass-toolbar">
+                    <button class="glass-button">Upload Files</button>
+                </div>
+                <br>
+                <div class="glass-toolbar">
+                    <button class="glass-button" type="button" onclick="submitForm()">Submit</button>
+                </div>
+                <br>
+                <div class="glass-toolbar">
+                    <a href="admin.html"><button class="adminbutton">Admin Login
+                        </button></a>
+                </div>
+            </section>
+        </main>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        </form>
+        </class>
+    </body>
